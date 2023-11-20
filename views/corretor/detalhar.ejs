@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Corretor</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+        
+    <link rel="stylesheet" href="/css/wal.css">
+</head>
+
+<body class="wal">
+
+    <div>
+        <h3>Corretor com o ID Específico <%= corretor.id %></h3>
+    </div>
+
+    <div>
+        <b>Nome: </b>
+        <%= corretor.nome %>
+    </div>
+    <div>
+        <b>Idade: </b>
+        <%= corretor.idade %>
+    </div>
+    <div>
+        <b>CPF: </b>
+        <%= corretor.cpf %>
+    </div>
+    <div>
+        <b>Código: </b>
+        <%= corretor.codigo %>
+    </div>
+
+    <!-- <a href="/corretores"></a>
+            <button class="button">Voltar para índice 
+                </button>
+        </a> -->
+    <div>
+
+    </div>
+    <a href="/corretores">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Listagem de Corretores</button>
+    </a>
+
+
+
+</body>
+<%- include("../partials/rodape.ejs")%>
+
+</html>

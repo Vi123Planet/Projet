@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Imóvel</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/wal.css">
+</head>
+<body class="wal">
+
+    <div>
+    <b>Imóvel com o ID Específico: <%= imovel.id %></b>
+    </div>
+    <div> 
+        <b>Localização:   <%= imovel.localizaçao %></b> 
+    </div>
+    <div>
+        <b>Proprietário: <%= imovel.proprietario %></b>
+    </div>
+    <div>
+        <b>Valor do Imóvel <%= imovel.valor%></b> 
+    </div>
+    <div>
+        <b>Imagem do Imóvel <%= imovel.valor%></b> 
+    </div>
+
+    <a href="/imoveis">
+        <input type="button" value="Voltar para tabela de imóveis"> 
+    </a>
+    
+</body>
+<%- include("../partials/rodape.ejs")%>
+</html>

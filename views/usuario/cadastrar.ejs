@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastramento do Usuário</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+
+    
+    <link rel="stylesheet" href="/css/wal.css">
+</head>
+<body class="wal">
+    <div class="container">
+      <% if (status == 1) { %>
+        <div style="background-color: rgb(255, 0, 21);">Usuario com email já existente!!!</div>
+        
+    <%} %>
+    <form action="/usuarios" method="post">
+
+      <input type="hidden" name="_id" value="<%= usuario._id %>">
+
+        <label for="id" >Qual seu id?</label>
+        <div class="input-group mb-3" >
+            <input <% if(usuario.id != undefined){%> readonly <% } %> type="text" required class="form-control" placeholder="Sua identificação numeral" aria-label="Username"
+            name="id" id="id" value="<%= usuario.id %>">
+          </div>
+
+          
+        <label for="nome" >Qual seu nome?</label>
+        <div class="input-group mb-3">
+            <input required type="text" class="form-control" placeholder="Seu nome completinho" aria-label="Username"
+            name="nome" id="nome" value="<%= usuario.nome %>">
+          </div>
+            
+        <label for="email" >Qual seu email?</label>
+        <div class="input-group mb-3">
+            <input required type="email" class="form-control" placeholder="Seu email certinho" aria-label="Username"
+            name="email" id="email" value="<%= usuario.email %>"
+            >
+          </div>
+
+        <label for="senha">Qual sua senha?</label>       
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Qual sua senha? Obs.: proteja sua conta" aria-label="Username"
+            name="senha" id="senha" value="<%= usuario.senha %>">
+            <span class="lnr lnr-eye"></span>
+          </div>
+
+          <!-- <div>
+            <input class="btn btn-primary" type="submit" value="Salvar">
+          </div> -->
+          <div>
+            <input class="btn btn-success" type="submit" value="Atualizar">
+          </div>
+    </form>
+    
+    <a href="/" class="btn btn-info">Índice</a>
+
+    <div>
+    <a href="/usuarios/login">Se você já possui conta, clique aqui</a>
+    </div>
+
+</div>
+</body>
+<%-include("../partials/rodape.ejs")%>
+<script>
+  let btn = document.querySelector('.lnr-eye');
+
+btn.addEventListener('click', function() {
+
+    let input = document.querySelector('#password');
+
+    if(input.getAttribute('type') == 'password') {
+        input.setAttribute('type', 'text');
+    } else {
+        input.setAttribute('type', 'password');
+    }
+
+});
+</script>
+</html>

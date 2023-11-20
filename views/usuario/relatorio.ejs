@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/wal.css">
+</head>
+<body class="wal">
+    <div class="container">
+    <% if (status == 1) { %>
+        <div style="background-color: aqua;">Usuario cadastrado com sucesso!!!</div>
+        
+    <%} %>
+    <% if (status == 2) { %>
+        <div style="background-color: rgb(255, 0, 21);">Usuario removido com sucesso!!!</div>
+        
+    <%} %>
+    <% if (status == 3) { %>
+        <div style="background-color: rgb(43, 255, 0);">Usuario atualizado com sucesso!!!</div>
+        
+    <%} %>
+    <!-- <% if (status == 4) { %>
+        <div style="background-color: rgb(255, 0, 21);">Usuario com email ou id já existente(s)!!!</div>
+        
+    <%} %> -->
+
+    <br>
+    <h3>Usuários </h3>
+    <div>
+        <!-- <div>Usuario cadastrado com sucesso!!!! </div> -->
+        
+        <table class="table table-striped">
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Detalhes</th>
+            <th>Remoção</th>
+            <th>Atualizar</th>
+        
+    <% for (const usuario of usuarios){ %>
+        <tr>
+            <td> 
+                <%= usuario.id %> 
+            </td>    
+        <td> 
+            <%= usuario.nome %> 
+        </td>
+        <td>
+            <%= usuario.email %>
+        </td>
+        <td> 
+            <%= usuario.senha %> 
+        </td>
+        <td>    
+            <a href="/usuarios/<%= usuario.id %>" class="btn btn-warning">Detalhes
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket-detailed-fill" viewBox="0 0 16 16">
+                        <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6V4.5Zm4 1a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5Zm0 5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5ZM4 8a1 1 0 0 0 1 1h6a1 1 0 1 0 0-2H5a1 1 0 0 0-1 1Z"/>
+                      </svg>
+               </a>
+         </td>
+
+        <td>
+            
+            <a href="/usuarios/deletar/<%= usuario.id %>" class="btn btn-outline-danger"
+                onclick="return confirm('Deseja realmente remover?')">Remova esse(a) usuário(a)
+            <i class="bi bi-trash2-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2-fill" viewBox="0 0 16 16">
+                <path d="M2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225zm9.89-.69C10.966 2.214 9.578 2 8 2c-1.58 0-2.968.215-3.926.534-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466-.18-.14-.498-.307-.975-.466z"/>
+              </svg></i></a> 
+        </td>
+
+        <td>    
+            <a href="/usuarios/atualizar/<%= usuario.id %>" class="btn btn-success">Atualizar <i class="bi bi-bookmark-heart-fill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
+                    <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13.5zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                  </svg>
+            </i></a>
+         </td>
+        
+    <br>
+
+        </tr>
+    <%} %>
+    </table>
+    
+    <a href="/">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Índice</button>
+    </a>
+        </div>
+    
+    </body>
+
+<%- include("../partials/rodape.ejs")%>
+</html>

@@ -1,0 +1,14 @@
+.wal{
+    background-image: url("/img/wel.webp");
+    background-size: cover;
+    background-position: center;
+    /* flood-opacity: 1; */
+    /* opacity: 1; */
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+  }

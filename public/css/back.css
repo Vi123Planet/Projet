@@ -1,0 +1,54 @@
+.back{
+    background-image: url("/img/massachusets.jpg");
+    background-size: cover;
+    background-position: center;
+    flood-opacity: 1;
+    /* opacity: 1; */
+    background-repeat: no-repeat;
+    position: static;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+  }
+
+.button {
+    position: static;
+    background-color: #ffd561;
+    border: groove;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    transition-duration: 0.5s;
+    text-decoration: wavy;
+    overflow: hidden;
+    cursor: pointer;
+    text-overflow: ellipsis;
+  }
+  
+  .button:after {
+    content: "";
+    background: #f1f1f1;
+    display: flexbox;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  

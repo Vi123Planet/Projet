@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <%- include("partials/cabecalho.ejs")%>
+    <%-include("partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/back.css">
+
+</head>
+<body class="back">
+
+  <div >
+    <h3 class="titulo">
+        O que você deseja conquistar hoje?</h3>
+  </div>
+    <br><br><br><br><br><br>
+    <div class="container" position="bottom center">
+        <div class="row">
+          <div class="col">
+            <a href="/corretores">
+                <input type="button" class="button" value="Listagem dos Corretores">
+            </a>
+          </div>
+          <div class="col">
+            <a href="/imoveis">
+                <input type="button" class="button" value="Listagem de Imóveis">
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="/usuarios">
+                <input type="button" class="button" value="Listagem dos Usuários">
+            </a>
+          </div>
+
+
+          <div class="w-100"></div>
+          <div class="col">
+            
+            <a href="/corretores/cadastrar">
+                <input type="button" class="button" value="Cadastrar Corretor">
+            </a>
+          </div>
+          <div class="col">
+            <a href="/imoveis/cadastrar">
+            <input type="button" class="button" value="Cadastrar Imóvel">
+        </a></div>
+
+        <div class="col">
+          <a href="/usuarios/cadastrar">
+          <input type="button" class="button" value="Cadastrar Usuário">
+      </a></div>
+
+        </div>
+      </div>
+
+</body>    
+    <%- include("partials/rodape.ejs")%>
+</html>

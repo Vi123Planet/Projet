@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastramento do Corretor</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+    
+    <link rel="stylesheet" href="/css/wal.css">
+</head>
+<body class="wal">
+    <div class="container">
+    <form action="/corretores" method="post">
+
+      <input type="hidden" name="_id" value="<%= corretor._id %>">
+
+        <label for="id" >Qual seu id?</label>
+        <div class="input-group mb-3" >
+            <input <% if(corretor.id != undefined){%> readonly <% } %> type="id" required class="form-control" placeholder="Sua identificação numeral" aria-label="Username"
+            name="id" id="id" value="<%= corretor.id %>">
+          </div>
+
+          
+        <label for="nome" >Qual seu nome?</label>
+        <div class="input-group mb-3">
+            <input required type="text" class="form-control" placeholder="Seu nome completinho" aria-label="Username"
+            name="nome" id="nome" value="<%= corretor.nome %>">
+          </div>
+
+        <label for="idade">Qual sua idade?</label>       
+        <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="Qual sua idade? Obs.: Não minta" aria-label="Username"
+            name="idade" id="idade" value="<%= corretor.idade %>">
+          </div>
+
+          <label for="cpf">Qual seu CPF?</label>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="Obs.: apenas números" aria-label="number"
+              name="cpf" id="cpf" value="<%= corretor.cpf %>">
+          </div>
+
+          <label for="codigo" >Qual o código que vincula você para com a corretora?</label>
+          <div class="input-group mb-3">
+            <input required type="text" class="form-control" placeholder="Só você tem esse código" aria-label="text"
+            name="codigo" id="codigo" value="<%= corretor.codigo %>">
+            </div>
+
+          <!-- <div>
+            <input class="btn btn-primary" type="submit" value="Salvar">
+          </div> -->
+          <div>
+            <input class="btn btn-success" type="submit" value="Atualizar">
+          </div>
+    </form>
+    
+    <a href="/" class="btn btn-info">Índice</a>
+
+</div>
+</body>
+<%-include("../partials/rodape.ejs")%>
+</html>

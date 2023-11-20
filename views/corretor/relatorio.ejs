@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Corretores</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/wal.css">
+</head>
+<body class="wal">
+    <div class="container">
+    <% if (status == 1) { %>
+        <div style="background-color: aqua;">Corretor cadastrado com sucesso!!!</div>
+        
+    <%} %>
+    <% if (status == 2) { %>
+        <div style="background-color: rgb(255, 0, 21);">Corretor removido com sucesso!!!</div>
+        
+    <%} %>
+    <% if (status == 3) { %>
+        <div style="background-color: rgb(43, 255, 0);">Corretor atualizado com sucesso!!!</div>
+        
+    <%} %>
+    <br>
+    <h3>Corretores </h3>
+    <div>
+        <!-- <div>Corretor cadastrado com sucesso!!!! </div> -->
+        
+        <table class="table table-striped">
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cpf</th>
+            <th>Código</th>
+            <th>Detalhes</th>
+            <th>Remoção</th>
+            <th>Atualizar</th>
+        
+    <% for (const corretor of corretores){ %>
+        <tr>
+            
+        <td> 
+            <%= corretor.nome %> 
+        </td>
+        <td>
+            <%= corretor.idade %>
+        </td>
+        <td> 
+            <%= corretor.cpf %> 
+        </td>
+        <td>
+            <%= corretor.codigo %>
+        </td>
+        <td>    
+            <a href="/corretores/<%= corretor.id %>" class="btn btn-warning">Detalhes</a>
+         </td>
+
+        <td>
+            
+            <a href="/corretores/deletar/<%= corretor.id %>" class="btn btn-outline-danger"
+                onclick="return confirm('Deseja realmente remover?')">Remova esse(a) corretor(a)<i class="bi bi-trash3-fill"></i>
+            </a></i>
+        </td>
+
+        <td>    
+            <a href="/corretores/atualizar/<%= corretor.id %>" class="btn btn-success">Atualizar</a>
+         </td>
+        
+    <br>
+
+        </tr>
+    <%} %>
+    </table>
+    
+    <a href="/">
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Índice</button>
+    </a>
+        </div>
+    
+    </body>
+
+<%- include("../partials/rodape.ejs")%>
+</html>

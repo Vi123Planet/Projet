@@ -1,0 +1,19 @@
+body,html{
+    height: 100%; 
+    overflow: hidden;
+    background-image: url(https://images.pexels.com/photos/1145257/pexels-photo-1145257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+  }
+  
+  .l-form{
+    background-color:rgba(255, 230, 0, 0.5);
+    border-radius:12px;
+    padding: 12px;
+    
+    position: center;
+  }
+  
+  .i-form{
+    border-radius:12px;
+    padding: 12px;
+  }
